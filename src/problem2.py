@@ -2,8 +2,8 @@
 Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Brandon Hao.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import testing_helper
 import time
@@ -45,6 +45,33 @@ def problem2a_testing():
     print('Testing the   sum_of_digits_of_sum_of_factors   function:')
     print('---------------------------------------------------------')
 
+    expected = 11
+    actual = number_of_factors(28)
+    print('Test 1:')
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    print('---------------------------------------------------------')
+
+    expected = 1
+    actual = number_of_factors(1)
+    print('Test 2:')
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    print('---------------------------------------------------------')
+
+    expected = 6
+    actual = number_of_factors(5)
+    print('Test 3:')
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    print('---------------------------------------------------------')
+
+    expected = 15
+    actual = number_of_factors(8)
+    print('Test 4:')
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    print('---------------------------------------------------------')
 
 def sum_of_digits_of_sum_of_factors(n):
     """
@@ -309,6 +336,11 @@ def problem2b(a, b, x):
          is great than or equal to 5 are: 16, 18, 20, and 24,
          and the sum   16 + 18 + 20 + 24   is 78.
      """
+    sum = 0
+    for k in range(a,b+1):
+        if number_of_factors(k)>= x:
+            sum = sum + k
+    return sum
     ############################################################################
     # TODO: 4. Implement and test this function.  See the IMPORTANT NOTE below!
     #          Tests have been written for you (above).
@@ -442,6 +474,12 @@ def problem1c(m):
     # TODO (continued)    You get   NO credit   if your solution is more
     # TODO (continued)    than 3 lines of code (and it can be done in 1 line).
     ############################################################################
+    sum = 0
+
+    for k in range(m+1, m+11):
+        if not m % k == 0:
+            sum = sum + k
+    return sum
 
 
 ################################################################################

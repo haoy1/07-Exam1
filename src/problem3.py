@@ -2,7 +2,7 @@
 Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
+         Amanda Stouder, their colleagues and Brandon Hao.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
@@ -87,6 +87,27 @@ def problem3(point, length, delta, window):
       :type delta:   int
       :type window:  rg.RoseWindow
     """
+    line = rg.Line(point, rg.Point(point.x, point.y+length))
+    line.color = 'black'
+    line.thickness = 3
+    line.attach_to(window)
+
+    line1 = rg.Line(point, rg.Point(point.x+length, point.y))
+    line1.attach_to(window)
+
+    for k in range(0, 99):
+        if point.y + k*delta <= point.y+length:
+            line = rg.Line(rg.Point(point.x, point.y + k*delta), rg.Point(point.x + length + 20*k, point.y + k*delta))
+            if k % 3 == 1:
+                line.color = 'cyan'
+            elif k % 3 == 2:
+                line.color = 'spring green'
+            else:
+                line.color = 'magenta'
+            line.thickness = 3
+            line.attach_to(window)
+
+    window.render()
     # --------------------------------------------------------------------------
     # TODO: 2. Implement and test this function.
     # TODO (continued):  IMPORTANT: Use this ITERATIVE ENHANCEMENT PLAN:
