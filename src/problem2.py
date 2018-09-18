@@ -474,12 +474,7 @@ def problem1c(m):
     # TODO (continued)    You get   NO credit   if your solution is more
     # TODO (continued)    than 3 lines of code (and it can be done in 1 line).
     ############################################################################
-    sum = 0
 
-    for k in range(m+1, m+11):
-        if not m % k == 0:
-            sum = sum + k
-    return sum
 
 
 ################################################################################
